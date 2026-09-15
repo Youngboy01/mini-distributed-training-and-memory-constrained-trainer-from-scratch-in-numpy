@@ -63,8 +63,14 @@ def mse_loss_and_grad(y_pred, y_true):
     dy_pred = (2/y_pred.size) * diff
     return float(loss) , dy_pred
 
-# Step 7 - linear_backward (not yet solved)
-# TODO: implement
+# Step 7 - linear_backward
+import numpy as np
+
+def linear_backward(d_out, x, w):
+    dx = d_out @ w.T
+    dw = x.T @ d_out
+    db = np.sum(d_out, axis = 0)
+    return dx, dw, db
 
 # Step 8 - relu_backward (not yet solved)
 # TODO: implement
