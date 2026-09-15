@@ -77,8 +77,10 @@ def relu_backward(d_out, z):
     dz = d_out * (z>0)
     return dz
 
-# Step 9 - first_linear_backward (not yet solved)
-# TODO: implement
+# Step 9 - first_linear_backward
+def first_linear_backward(d_z1, x, w1):
+    dx, dW1, db1 = linear_backward(d_z1,x,w1)
+    return dx,dW1,db1
 
 # Step 10 - mlp_backward (not yet solved)
 # TODO: implement
