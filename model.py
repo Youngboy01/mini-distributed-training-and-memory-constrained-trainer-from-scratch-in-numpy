@@ -56,8 +56,12 @@ def mlp_forward(x, params):
     }
     return z2, cache
 
-# Step 6 - mse_loss_and_grad (not yet solved)
-# TODO: implement
+# Step 6 - mse_loss_and_grad
+def mse_loss_and_grad(y_pred, y_true):
+    diff = y_pred  - y_true
+    loss = np.mean(diff**2)
+    dy_pred = (2/y_pred.size) * diff
+    return float(loss) , dy_pred
 
 # Step 7 - linear_backward (not yet solved)
 # TODO: implement
