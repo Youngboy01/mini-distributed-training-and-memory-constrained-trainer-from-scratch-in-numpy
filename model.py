@@ -39,8 +39,9 @@ def linear_forward(x, w, b):
     y = x @ w +b 
     return y
 
-# Step 4 - relu_forward (not yet solved)
-# TODO: implement
+# Step 4 - relu_forward
+def relu_forward(x):
+    return np.maximum(x,0.0)
 
 # Step 5 - mlp_forward (not yet solved)
 # TODO: implement
