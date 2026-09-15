@@ -72,8 +72,10 @@ def linear_backward(d_out, x, w):
     db = np.sum(d_out, axis = 0)
     return dx, dw, db
 
-# Step 8 - relu_backward (not yet solved)
-# TODO: implement
+# Step 8 - relu_backward
+def relu_backward(d_out, z):
+    dz = d_out * (z>0)
+    return dz
 
 # Step 9 - first_linear_backward (not yet solved)
 # TODO: implement
