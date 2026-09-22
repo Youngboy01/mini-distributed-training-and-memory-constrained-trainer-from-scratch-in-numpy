@@ -113,8 +113,12 @@ def accumulate_gradients(accum_grads, new_grads):
         result[k] = accum_grads[k] + new_grads[k]
     return result
 
-# Step 13 - scale_accumulated_gradients (not yet solved)
-# TODO: implement
+# Step 13 - scale_accumulated_gradients
+def scale_accumulated_gradients(accum_grads, num_micro_batches):
+    scaled_grads = {}
+    for k in accum_grads.keys():
+        scaled_grads[k] = accum_grads[k]/num_micro_batches
+    return scaled_grads
 
 # Step 14 - grad_accumulation_step (not yet solved)
 # TODO: implement
